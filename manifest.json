@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Simple CSS Override",
+  "version": "1.0.0",
+  "description": "Override CSS per-site by injecting custom styles.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "CSS Override",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
